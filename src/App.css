@@ -1,5 +1,60 @@
 .App {
+  width: 450px;
+  padding: 25px;
   text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  margin: 90px auto;
+  color: #555;
+  background: #E4F1FE;
+  border-radius: 10px;
+}
+
+h1.title {
+  margin-bottom: 0px;
+  color: #333;
+}
+
+h1.word-title {
+  color: #555;
+}
+
+form {
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+form label {
+  margin: 10px auto;
+  font-size: 18px;
+}
+
+form label input {
+  height: 22px;
+  line-height: 1;
+  padding: 5px;
+  margin-left: 10px;
+
+}
+
+
+input.hangman-button,
+button.hangman-button {
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  margin: auto;
+  flex: 1;
+  font-size: 14px;
+  width: 120px;
+}
+
+button.NewGameButton {
+  background: #4286f4;
+  color: white;
 }
 
 .App-logo {

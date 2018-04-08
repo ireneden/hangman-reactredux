@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1 className="title">HANGMAN!</h1>
+          <h1 className="title">CONFIDENCE-BOOSTER HANGMAN!</h1>
           <Word />
           <InputField store={this.props.store}/>
           <ErrorCount />

@@ -11,7 +11,7 @@ export class Word extends React.Component {
   render() {
   return (
         <div>
-          <h1>{this.props.word}</h1>
+          <h1 className='word-title'>{this.props.word}</h1>
           {this.props.word.map((item, index) => (
               <span className='index' key={index}>_ </span> ))}
         </div>

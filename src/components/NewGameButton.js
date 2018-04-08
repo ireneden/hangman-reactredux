@@ -17,7 +17,7 @@ export class NewGameButton extends React.Component {
     return (
       <button
         onClick={this.handleClick}
-        className="NewGameButton">
+        className="NewGameButton hangman-button">
         New Game
       </button>
     )
