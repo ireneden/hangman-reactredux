@@ -1,22 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 
 export class Word extends React.Component {
-
-  constructor(props){
-    super(props);
-    this.word = Array.from(this.props.values[Math.floor(Math.random()*this.props.values.length)]);
+  static propTypes = {
+    word: PropTypes.arrayOf(PropTypes.string).isRequired
   }
 
   render() {
-    return (
-      <div>
-        {this.word.map((item, index) => (
-            <span className='index' key={index}>_ </span> ))}
-      </div>
-    )
-  }
+  return (
+        <div>
+          {this.props.word.map((item, index) => (
+              <span className='index' key={index}>_ </span> ))}
+        </div>
+      )
+    }
 }
 
-export default Word
+const mapStateToProps = ({ word }) => ({ word })
+
+export default connect(mapStateToProps)(Word)

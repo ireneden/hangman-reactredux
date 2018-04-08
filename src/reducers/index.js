@@ -1,2 +1,5 @@
+import word from './word'
 
-export default {} 
+export default {
+  word
+}
