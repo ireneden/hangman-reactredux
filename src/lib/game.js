@@ -3,16 +3,6 @@ export function pickRandomWord(words) {
 }
 
 
-export function wrongGuessCount(word, guesses) {
-  let wrongGuesses = 0
-  guesses.forEach(function(guess) {
-  if (word.indexOf(guess)!== -1) return wrongGuesses
-  return wrongGuesses ++ })
-return wrongGuesses
-}
-
-
-
 export function checkGuess(letter, word) {
   //if (letter.indexOf(word) > -1)
   alert('in function');
