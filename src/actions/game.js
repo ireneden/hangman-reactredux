@@ -3,7 +3,7 @@ import { pickRandomWord } from '../lib/game'
 
 
 export const createGame = () => {
-  const word = pickRandomWord(['blink182', 'LakeStreetDive', 'EdSheeran'])
+  const word = pickRandomWord(['fruit', 'codaisseur', 'cart', 'boomerang', 'ciaone', 'sleep'])
   return {
     type: CREATE_GAME,
     payload: word

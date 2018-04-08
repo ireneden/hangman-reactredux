@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
           <h1 className="title">HANGMAN!</h1>
           <Word />
-          <InputField />
+          <InputField store={this.props.store}/>
           <ErrorCount />
           <NewGameButton />
       </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { checkGuess } from '../lib/game'
+import { connect } from 'react-redux'
 
 class InputField extends React.Component {
   constructor(props) {
@@ -15,13 +17,19 @@ class InputField extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A guess was submitted: ' + this.state.value);
+    let letter = this.state.value;
+    if (this.props.word.includes(letter)){
+      alert('Correct letter');
+      return letter;
+    } else {
+      alert('Wrong letter');
+    }
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className='inputfield'>
         <label>
          Guess:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
@@ -32,4 +40,7 @@ class InputField extends React.Component {
   }
 }
 
-export default InputField
+
+const mapStateToProps = ({ word }) => ({ word })
+
+export default connect(mapStateToProps)(InputField)
