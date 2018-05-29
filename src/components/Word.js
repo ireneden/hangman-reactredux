@@ -11,14 +11,13 @@ export class Word extends React.Component {
   render() {
   return (
         <div>
-          <h1 className='word-title'>{this.props.word}</h1>
-          {this.props.word.map((item, index) => (
-              <span className='index' key={index}>_ </span> ))}
+          <h2>Guess the word!</h2>
+          <h2>{this.props.wordToGuess}</h2>
         </div>
       )
     }
 }
 
-const mapStateToProps = ({ word }) => ({ word })
+const mapStateToProps = ({ wordToGuess }) => ({ wordToGuess })
 
 export default connect(mapStateToProps)(Word)

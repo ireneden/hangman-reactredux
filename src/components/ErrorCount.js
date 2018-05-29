@@ -1,23 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
 
 
 class ErrorCount extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    }
-  }
-
+  
     render() {
         return (
             <div>
-                <h3>Error Count: {this.state.count}</h3>
+                 <h3>You have {this.props.counter} guesses left </h3>
             </div>
         )
     }
 }
 
 
-export default ErrorCount
+function mapStateToProps(state) {
+    return {
+        counter: state.counter
+    }
+}
+
+export default connect(mapStateToProps)(ErrorCount)

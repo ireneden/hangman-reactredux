@@ -1,6 +1,6 @@
 .App {
   width: 450px;
-  padding: 25px;
+  padding: 40px;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
@@ -10,6 +10,14 @@
   color: #555;
   background: #E4F1FE;
   border-radius: 10px;
+}
+
+img.HangmanImage {
+  max-width: 200px;
+  max-height: 200px;
+  margin-left: 130px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 h1.title {
