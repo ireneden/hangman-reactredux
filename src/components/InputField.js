@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { checkGuess } from '../lib/game'
 import { connect } from 'react-redux'
 
-class InputField extends React.Component {
+class InputField extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -12,35 +11,42 @@ class InputField extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  
+  newGuess(guesses) {
+    this.props.dispatch({type: "NEW_GUESS", payload: this.state.value})
   }
 
-  handleSubmit(event) {
-    let letter = this.state.value;
-    if (this.props.word.includes(letter)){
-      alert('Correct letter');
-      return letter;
-    } else {
-      alert('Wrong letter');
-    }
-    event.preventDefault();
+
+  handleChange(event) {
+    const {name, value} = event.target  
+    this.setState({
+      [name]: value
+    })
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.onSubmit(this.state)
+  }
+
 
   render() {
     return (
       <form onSubmit={this.handleSubmit} className='inputfield'>
         <label>
-         Guess:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+         Guess a letter:
+          <input name="guesses" type="text" value={this.state.guesses} onChange={this.handleChange} maxLength="1"/>
         </label>
-        <input type="submit" className="hangman-button" value="Submit" />
+        <button type="submit" className="hangman-button" >Submit!</button>
       </form>
     );
   }
 }
 
 
-const mapStateToProps = ({ word }) => ({ word })
-
+function mapStateToProps(state) {
+  return {
+      guesses: state.guesses,
+  }
+}
 export default connect(mapStateToProps)(InputField)

@@ -1,27 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { createGame } from '../actions/game'
+//THE NEW GAME BUTTON IS CURRENTLY NOT IN USE SO IT WAS COMMENTED OUT
 
-export class NewGameButton extends React.Component {
+// import React from 'react'
+// import PropTypes from 'prop-types'
+// import { connect } from 'react-redux'
+// import { createGame } from '../actions/game'
 
-  static propTypes = {
-    createGame: PropTypes.func.isRequired
-  }
+// export class NewGameButton extends React.Component {
 
-  handleClick = () => {
-    this.props.createGame()
-  }
+//   static propTypes = {
+//     createGame: PropTypes.func.isRequired
+//   }
 
-  render() {
-    return (
-      <button
-        onClick={this.handleClick}
-        className="NewGameButton hangman-button">
-        New Game
-      </button>
-    )
-  }
-}
+//   handleClick = () => {
+//     this.props.createGame()
+//   }
 
-export default connect(null, { createGame })(NewGameButton)
+//   render() {
+//     return (
+//       <button
+//         onClick={this.handleClick}
+//         className="NewGameButton hangman-button">
+//         New Game
+//       </button>
+//     )
+//   }
+// }
+
+// export default connect(null, { createGame })(NewGameButton)
