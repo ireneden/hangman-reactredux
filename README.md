@@ -7,7 +7,8 @@ This app is made with React - Redux
 4. run yarn start to start the app
 5. happy hacking! 👌
 
-### This is a simplified version of the hangman game
+### A simplified version of the hangman game
+This was my very first project in React-Redux
 
 
 ### To do:
