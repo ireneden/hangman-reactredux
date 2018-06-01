@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import InputField from './components/InputField'
-// import NewGameButton from './components/NewGameButton'
-// import Word from './components/Word'
 import Game from './components/Game'
-// import ErrorCount from './components/ErrorCount'
 
 
 class App extends Component {

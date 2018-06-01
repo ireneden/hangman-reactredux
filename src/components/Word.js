@@ -4,11 +4,10 @@ import { connect } from 'react-redux'
 
 
 export class Word extends React.Component {
-  static propTypes = {
-    word: PropTypes.arrayOf(PropTypes.string).isRequired
-  }
+
 
   render() {
+    if (!this.props.wordToGuess.includes("_")) return alert("CONGRATS! YOU WON"), window.location ="/"
   return (
         <div>
           <h2>Guess the word!</h2>

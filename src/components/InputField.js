@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+
 class InputField extends PureComponent {
   constructor(props) {
     super(props);
@@ -31,10 +32,11 @@ class InputField extends PureComponent {
 
 
   render() {
+
     return (
       <form onSubmit={this.handleSubmit} className='inputfield'>
         <label>
-         Guess a letter:
+         <h4>Choose a letter:</h4>
           <input name="guesses" type="text" value={this.state.guesses} onChange={this.handleChange} maxLength="1"/>
         </label>
         <button type="submit" className="hangman-button" >Submit!</button>
