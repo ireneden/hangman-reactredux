@@ -12,6 +12,7 @@ export default (state = initialState, action) => {
         guesses = guesses.concat(action.payload.guesses)
         const newState = showGuess(word, guesses)
         return newState
+       
 
     default :
       return state
